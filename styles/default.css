@@ -1,4 +1,11 @@
+:root {
+  
+    --light: white;  
+    --dark: black;
+}
+
 body {
     background-image: url(/backgrounds/New-York.webp);
     background-size: cover;
+    color: var(--light);
 }
