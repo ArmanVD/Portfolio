@@ -3,28 +3,24 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hi! Welcome to my personal website. Here i showcase my work, information about myself and contact possibilities.">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Hi! Welcome to my personal website. Here I showcase my work, information about myself, and contact possibilities.">
     <title>Arman Voogd</title>
-    <link rel="stylesheet" href="./styles/default.css">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="preload" href="/fonts/ReemKufiArabic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/ReemKufiLatin.woff2" as="font" type="font/woff2" crossorigin>
-    <script src="scripts/script.js" defer></script>
+
+    <script>
+      window.onload = function() {
+        const userLang = navigator.language || navigator.userLanguage;
+        const lang = userLang.toLowerCase();
+
+        if (lang.startsWith('fa')) {
+          window.location.href = '/fa';
+        } else {
+          window.location.href = '/en';
+        }
+      };
+    </script>
   </head>
   <body>
-    <header>
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Study</li>
-        <li>Projects</li>
-        <li>Photography</li>
-        <li>Contact</li>
-      </ul>
-    </header>
-    <main> 
-    </main>
+    <p>Redirecting you to your preferred language...</p>
   </body>
 </html>
