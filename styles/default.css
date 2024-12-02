@@ -78,6 +78,5 @@ header {
       
     a:hover::after {
         width: 100%;
-        left: 0;
     }
 }

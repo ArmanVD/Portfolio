@@ -6,4 +6,8 @@ header {
     a::after {
         right: 0%;
     }
+
+    a:hover::after {
+        left: 0;
+    }
 }
