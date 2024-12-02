@@ -1,3 +1,9 @@
 body {
     direction: rtl;
 }
+
+header {
+    a::after {
+        right: 0%;
+    }
+}

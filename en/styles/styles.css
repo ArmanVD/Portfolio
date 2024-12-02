@@ -1,3 +1,9 @@
 body {
     direction: ltr;
 }
+
+header {
+    a::after {
+        left: 0%;
+    }
+}
