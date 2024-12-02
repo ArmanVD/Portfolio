@@ -31,6 +31,20 @@
 }
 
 body {
-    direction: ltr;
     font-family: 'Reem Kufi', sans-serif;
+}
+
+header {
+    
+    ul{ 
+        list-style-type: none;
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
 }
