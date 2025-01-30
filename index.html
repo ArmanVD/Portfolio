@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Hi! Welcome to my personal website. Here I showcase my work, information about myself, and contact possibilities.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Hi! Welcome to my personal website. Here I showcase my work, information about myself, and contact possibilities."
+    />
     <title>Arman Voogd</title>
 
     <script>
-      window.onload = function() {
+      window.onload = function () {
         const userLang = navigator.language || navigator.userLanguage;
         const lang = userLang.toLowerCase();
 
-        if (lang.startsWith('fa')) {
-          window.location.href = '/fa';
+        if (lang.startsWith("fa")) {
+          window.location.href = "/fa";
         } else {
-          window.location.href = '/en';
+          window.location.href = "/en";
         }
       };
     </script>

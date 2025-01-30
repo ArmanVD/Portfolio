@@ -1,13 +1,13 @@
 body {
-    direction: ltr;
+  direction: ltr;
 }
 
 header {
-    a::after {
-        left: 0%;
-    }
+  a::after {
+    left: 0%;
+  }
 
-    a:hover::after {
-        right: 0;
-    }
+  a:hover::after {
+    right: 0;
+  }
 }
