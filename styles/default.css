@@ -1,25 +1,13 @@
 :root {
   color-scheme: light dark;
 
-  /* Light mode */
-  --primary-background-light: #f2e6d9;
-  --secondary-background-light: #f0f0f0;
+  --background-primary-light: #f0f0f0;
+  --background-secondary-light: #ffffff;
+  --text-light: #1e1e1e;
 
-  --primary-text-light: #3d1e2e;
-  --secondary-text-light: #1f3d2b;
-
-  --accent-1-light: #d4a373;
-  --accent-2-light: #2b2d42;
-
-  /* Dark mode */
-  --primary-background-dark: #2b2d42;
-  --secondary-background-dark: #1f3d2b;
-
-  --primary-text-dark: #f0f0f0;
-  --secondary-text-dark: #3d1e2e;
-
-  --accent-1-dark: #d4a373;
-  --accent-2-dark: #f2e6d9;
+  --background-primary-dark: #1e1e1e;
+  --background-secondary-dark: #0e0e0e;
+  --text-dark: #f0f0f0;
 }
 
 /* latin */
@@ -50,8 +38,8 @@
 }
 
 * {
-  background-color: light-dark(var(--primary-background-light), var(--primary-background-dark));
-  color: light-dark(var(--primary-text-light), var(--primary-text-dark));
+  background-color: light-dark(var(--background-primary-light), var(--background-primary-dark));
+  color: light-dark(var(--text-light), var(--text-dark));
   margin: 0;
   box-sizing: border-box;
 }
@@ -95,7 +83,7 @@ header {
     bottom: 0;
     width: 0%;
     height: 2px;
-    background-color: light-dark(var(--primary-text-light), var(--primary-text-dark));
+    background-color: light-dark(var(--text-light), var(--text-dark));
     transition: all 0.4s ease;
   }
 
