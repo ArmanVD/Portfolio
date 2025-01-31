@@ -8,6 +8,25 @@
   --background-primary-dark: #1e1e1e;
   --background-secondary-dark: #0e0e0e;
   --text-dark: #f0f0f0;
+
+  --background-primary-persian: #dca562;
+  --background-secondary-persian: #1c39bb;
+  --text-persian: #701c1c;
+}
+
+[data-theme="light"] {
+  background-color: var(--background-primary-light);
+  color: var(--text-light);
+}
+
+[data-theme="dark"] {
+  background-color: var(--background-primary-dark);
+  color: var(--text-dark);
+}
+
+[data-theme="persian"] {
+  background-color: var(--background-primary-persian);
+  color: var(--text-persian);
 }
 
 /* latin */
@@ -42,6 +61,7 @@
   color: light-dark(var(--text-light), var(--text-dark));
   margin: 0;
   box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 body {
