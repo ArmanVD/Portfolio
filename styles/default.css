@@ -2,15 +2,12 @@
   color-scheme: light dark;
 
   --background-primary-light: #f0f0f0;
-  --background-secondary-light: #ffffff;
   --text-light: #1e1e1e;
 
   --background-primary-dark: #1e1e1e;
-  --background-secondary-dark: #0e0e0e;
   --text-dark: #f0f0f0;
 
-  --background-primary-persian: #c2b07e;
-  --background-secondary-persian: #c68f3f;
+  --background-primary-persian: #efe7da;
   --text-persian: #6e0509;
 }
 
@@ -158,28 +155,37 @@ header {
 .theme-menu {
   display: none;
   position: absolute;
-  background: light-dark(var(--background-secondary-light), var(--background-secondary-dark));
+  background: light-dark(var(--text-light), var(--text-dark));
+  color: light-dark(var(--background-primary-light), var(--background-primary-dark));
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   padding: 10px;
+  top: 110%;
   right: 50%;
   transform: translateX(50%);
   z-index: 1000;
   min-width: 180px;
   transition: all 0.3s ease;
   height: max-content;
+
+  li {
+    padding: 1em;
+  }
 }
 
 [data-theme="light"] .theme-menu {
-  background: var(--background-secondary-light);
+  background: var(--text-light);
+  color: var(--background-primary-light);
 }
 
 [data-theme="dark"] .theme-menu {
-  background: var(--background-secondary-dark);
+  background: var(--text-dark);
+  color: var(--background-primary-dark);
 }
 
 [data-theme="persian"] .theme-menu {
-  background: var(--background-secondary-persian);
+  background: var(--text-persian);
+  color: var(--background-primary-persian);
 }
 
 .theme-menu.show {
@@ -203,46 +209,46 @@ header {
 
 .theme-menu button[data-theme="light"]:hover,
 .theme-menu button[data-theme="light"]:focus {
-  background-color: var(--background-secondary-light);
-  color: var(--text-light);
+  background-color: var(--text-light);
+  color: var(--background-primary-light);
 }
 
 .theme-menu button[data-theme="dark"]:hover,
 .theme-menu button[data-theme="dark"]:focus {
-  background-color: var(--background-secondary-dark);
-  color: var(--text-dark);
+  background-color: var(--text-dark);
+  color: var(--background-primary-dark);
 }
 
 .theme-menu button[data-theme="persian"]:hover,
 .theme-menu button[data-theme="persian"]:focus {
-  background-color: var(--background-secondary-persian);
-  color: var(--text-persian);
+  background-color: var(--text-persian);
+  color: var(--background-primary-persian);
 }
 
 .theme-menu button[data-theme="automatic"]:hover,
 .theme-menu button[data-theme="automatic"]:focus {
-  background-color: light-dark(var(--background-secondary-light), var(--background-secondary-dark));
-  color: light-dark(var(--text-light), var(--text-dark));
+  background-color: light-dark(var(--text-light), var(--text-dark));
+  color: light-dark(var(--background-primary-light), var(--background-primary-dark));
 }
 
 .theme-menu button[data-theme="automatic"].active {
-  background-color: light-dark(var(--text-light), var(--text-dark));
-  color: light-dark(var(--background-secondary-light), var(--background-secondary-dark));
+  color: light-dark(var(--text-light), var(--text-dark));
+  background-color: light-dark(var(--background-primary-light), var(--background-primary-dark));
 }
 
 .theme-menu button[data-theme="light"].active {
-  background-color: var(--text-light);
-  color: var(--background-secondary-light);
+  color: var(--text-light);
+  background-color: var(--background-primary-light);
 }
 
 .theme-menu button[data-theme="dark"].active {
-  background-color: var(--text-dark);
-  color: var(--background-secondary-dark);
+  color: var(--text-dark);
+  background-color: var(--background-primary-dark);
 }
 
 .theme-menu button[data-theme="persian"].active {
-  background-color: var(--text-persian);
-  color: var(--background-secondary-persian);
+  color: var(--text-persian);
+  background-color: var(--background-primary-persian);
 }
 
 nav,
@@ -257,4 +263,5 @@ li {
   transform: translate(-50%, -50%);
   text-align: center;
   width: 100%;
+  font-size: xx-large;
 }
