@@ -95,6 +95,7 @@ body {
 
 header {
   height: 10vh;
+  z-index: 10;
 
   nav {
     height: 100%;
@@ -142,11 +143,12 @@ header {
 }
 
 #theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  font-family: "Gulzar", sans-serif;
 }
 
 .theme-menu {
@@ -242,4 +244,13 @@ header {
 nav,
 li {
   overflow: visible !important;
+}
+
+.name-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
 }

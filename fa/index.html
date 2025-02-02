@@ -12,13 +12,7 @@
     <link rel="stylesheet" href="/styles/default.css" />
     <link rel="stylesheet" href="/fa/styles/styles.css" />
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-    <link
-      rel="preload"
-      href="/fonts/ReemKufiArabic.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
+    <link rel="preload" href="https://fonts.gstatic.com/s/gulzar/v12/Wnz6HAc9eB3HB2I7YzYYiAzcPDKo.woff2" as="font" type="font/woff2" crossorigin />
     <script src="/fa/scripts/main.js" type="module"></script>
   </head>
   <body>
@@ -32,9 +26,24 @@
           <li><a href="/fa/photography">عکاسی</a></li>
           <li><a href="/fa/contact">تماس</a></li>
           <li dir="ltr"><a href="/en">English</a></li>
+          <li class="themeswitcher">
+            <button id="theme-toggle-btn" aria-label="Select theme">
+              <img id="theme-icon" src="../assets/theme-icon-light.svg" alt="Theme Icon" width="24" height="24" />
+            </button>
+            <ul class="theme-menu" id="theme-menu">
+              <li><button class="js-themepicker-themeselect" data-theme="automatic">خودکار</button></li>
+              <li><button class="js-themepicker-themeselect" data-theme="light">نور</button></li>
+              <li><button class="js-themepicker-themeselect" data-theme="dark">تاریک</button></li>
+              <li><button class="js-themepicker-themeselect" data-theme="persian">پارسی</button></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <article class="name-title">
+        <h1 id="animated-title" data-text="آرمان فوخت"></h1>
+      </article>
+    </main>
   </body>
 </html>
