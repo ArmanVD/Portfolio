@@ -57,12 +57,14 @@ const text = titleElement.dataset.text;
 
 let index = 0;
 
+setTimeout(() => {
+  typeEffect();
+}, 750);
+
 function typeEffect() {
   if (index < text.length) {
     titleElement.textContent += text[index];
     index++;
-    setTimeout(typeEffect, 150);
+    setTimeout(typeEffect, 200);
   }
 }
-
-typeEffect();
