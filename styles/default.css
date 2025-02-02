@@ -9,6 +9,38 @@
 
   --background-primary-persian: #efe7da;
   --text-persian: #6e0509;
+
+  --font-size-1: 32px;
+  --font-size-2: 28px;
+  --font-size-3: 24px;
+  --font-size-4: 20px;
+  --font-size-large: 18px;
+  --font-size-normal: 16px;
+  --font-size-small: 14px;
+  --font-size-label: 14px;
+
+  --line-height-1: 40px;
+  --line-height-2: 36px;
+  --line-height-3: 32px;
+  --line-height-4: 28px;
+  --line-height-large: 26px;
+  --line-height-normal: 24px;
+  --line-height-small: 22px;
+  --line-height-label: 22px;
+
+  --letter-spacing-1: -0.5px;
+  --letter-spacing-2: -0.4px;
+  --letter-spacing-3: -0.3px;
+  --letter-spacing-4: -0.2px;
+  --letter-spacing-large: -0.1px;
+  --letter-spacing-normal: 0;
+  --letter-spacing-small: 0.1px;
+  --letter-spacing-label: 0.2px;
+
+  --font-weight-bold: 700;
+  --font-weight-semi-bold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
 }
 
 [data-theme="light"] body {
