@@ -57,6 +57,8 @@ const text = titleElement.dataset.text;
 
 let index = 0;
 
+titleElement.textContent = "";
+
 setTimeout(() => {
   typeEffect();
 }, 750);

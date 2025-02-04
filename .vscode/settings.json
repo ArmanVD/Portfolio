@@ -1,4 +1,5 @@
 {
   "editor.linkedEditing": true,
-  "prettier.printWidth": 150
+  "prettier.printWidth": 150,
+  "cSpell.words": ["فوخد"]
 }
