@@ -41,6 +41,7 @@ function setTheme(theme) {
     activeButton.classList.add("active");
   }
 
+  updateHoverColors(theme);
   themeMenu.classList.remove("show");
 }
 
@@ -51,6 +52,33 @@ function getSystemTheme() {
 function updateThemeIcon(theme) {
   themeIcon.src = themeIcons[theme] || themeIcons["light"];
 }
+
+function updateHoverColors(theme) {
+  let bgColor, textColor;
+
+  switch (theme) {
+    case "light":
+      bgColor = "var(--background-primary-light)";
+      textColor = "var(--text-light)";
+      break;
+    case "dark":
+      bgColor = "var(--background-primary-dark)";
+      textColor = "var(--text-dark)";
+      break;
+    case "persian":
+      bgColor = "var(--background-primary-persian)";
+      textColor = "var(--text-persian)";
+      break;
+    default:
+      bgColor = "light-dark(var(--background-primary-light), var(--background-primary-dark))";
+      textColor = "light-dark(var(--text-light), var(--text-dark))";
+  }
+
+  document.documentElement.style.setProperty("--theme-bg-hover", bgColor);
+  document.documentElement.style.setProperty("--theme-text-hover", textColor);
+}
+
+updateHoverColors(localStorage.getItem("theme") || "automatic");
 
 const titleElement = document.querySelector("#animated-title");
 const text = titleElement.dataset.text;

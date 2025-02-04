@@ -248,28 +248,10 @@ header {
   transition: all 0.3s ease;
 }
 
-.theme-menu button[data-theme="light"]:hover,
-.theme-menu button[data-theme="light"]:focus {
-  background-color: var(--text-light);
-  color: var(--background-primary-light);
-}
-
-.theme-menu button[data-theme="dark"]:hover,
-.theme-menu button[data-theme="dark"]:focus {
-  background-color: var(--text-dark);
-  color: var(--background-primary-dark);
-}
-
-.theme-menu button[data-theme="persian"]:hover,
-.theme-menu button[data-theme="persian"]:focus {
-  background-color: var(--text-persian);
-  color: var(--background-primary-persian);
-}
-
-.theme-menu button[data-theme="automatic"]:hover,
-.theme-menu button[data-theme="automatic"]:focus {
-  background-color: light-dark(var(--text-light), var(--text-dark));
-  color: light-dark(var(--background-primary-light), var(--background-primary-dark));
+.theme-menu button:hover,
+.theme-menu button:focus {
+  background-color: var(--theme-bg-hover);
+  color: var(--theme-text-hover);
 }
 
 .theme-menu button[data-theme="automatic"].active {
