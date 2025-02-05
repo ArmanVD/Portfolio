@@ -82,18 +82,74 @@ updateHoverColors(localStorage.getItem("theme") || "automatic");
 
 const titleElement = document.querySelector("#animated-title");
 const text = titleElement.dataset.text;
+const h2Element = document.getElementById("animated-h2");
+const textElementH2 = document.getElementById("animated-text-h2");
+const cursor = document.getElementById("cursor");
+
+const wordsH2 = ["Frontender", "Developer", "Designer", "Web Developer", "UI/UX Designer", "Student"];
+const staticText = "I'm a ";
 
 let index = 0;
+let wordIndexH2 = 0;
+let charIndexH2 = 0;
+let isDeletingH2 = false;
+let isTypingStaticText = true;
+
 titleElement.textContent = "";
 
+const typeInterval = 100;
 setTimeout(() => {
   typeEffect();
-}, 750);
+}, typeInterval);
 
 function typeEffect() {
   if (index < text.length) {
     titleElement.textContent += text[index];
     index++;
-    setTimeout(typeEffect, 200);
+    setTimeout(typeEffect, typeInterval);
+  } else {
+    typeEffectH2();
   }
+}
+
+function typeEffectH2() {
+  h2Element.style.visibility = "visible";
+  cursor.style.opacity = "1";
+
+  if (isTypingStaticText) {
+    if (charIndexH2 < staticText.length) {
+      textElementH2.innerHTML = staticText.substring(0, charIndexH2 + 1);
+      charIndexH2++;
+      setTimeout(typeEffectH2, typeInterval);
+    } else {
+      isTypingStaticText = false;
+      charIndexH2 = 0;
+      updateWordH2();
+    }
+  }
+}
+
+function updateWordH2() {
+  const currentWord = wordsH2[wordIndexH2];
+
+  if (!isDeletingH2) {
+    textElementH2.innerHTML = staticText + currentWord.substring(0, charIndexH2 + 1);
+    charIndexH2++;
+
+    if (charIndexH2 === currentWord.length) {
+      isDeletingH2 = true;
+      setTimeout(updateWordH2, 15000);
+      return;
+    }
+  } else {
+    textElementH2.innerHTML = staticText + currentWord.substring(0, charIndexH2 - 1);
+    charIndexH2--;
+
+    if (charIndexH2 === 0) {
+      isDeletingH2 = false;
+      wordIndexH2 = (wordIndexH2 + 1) % wordsH2.length;
+    }
+  }
+
+  setTimeout(updateWordH2, typeInterval);
 }

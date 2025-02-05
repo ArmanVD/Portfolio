@@ -51,6 +51,11 @@
     a::after {
       background-color: var(--text-light);
     }
+
+    .theme-menu {
+      background: var(--text-light);
+      color: var(--background-primary-light);
+    }
   }
 }
 
@@ -62,6 +67,11 @@
     a::after {
       background-color: var(--text-dark);
     }
+
+    .theme-menu {
+      background: var(--text-dark);
+      color: var(--background-primary-dark);
+    }
   }
 }
 
@@ -72,6 +82,11 @@
   header {
     a::after {
       background-color: var(--text-persian);
+    }
+
+    .theme-menu {
+      background: var(--text-persian);
+      color: var(--background-primary-persian);
     }
   }
 }
@@ -128,6 +143,15 @@ h6 {
   margin: 0;
 }
 
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   background-color: light-dark(var(--background-primary-light), var(--background-primary-dark));
   color: light-dark(var(--text-light), var(--text-dark));
@@ -180,6 +204,15 @@ header {
   }
 }
 
+main {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
 .themeswitcher {
   position: relative;
 }
@@ -212,21 +245,6 @@ header {
   li {
     padding: 1em;
   }
-}
-
-[data-theme="light"] .theme-menu {
-  background: var(--text-light);
-  color: var(--background-primary-light);
-}
-
-[data-theme="dark"] .theme-menu {
-  background: var(--text-dark);
-  color: var(--background-primary-dark);
-}
-
-[data-theme="persian"] .theme-menu {
-  background: var(--text-persian);
-  color: var(--background-primary-persian);
 }
 
 .theme-menu.show {
@@ -280,11 +298,24 @@ li {
 }
 
 .name-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
   width: 100%;
   font-size: xx-large;
+
+  .cursor {
+    animation: blink 1s infinite;
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
