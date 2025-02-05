@@ -160,7 +160,7 @@ h6 {
 
 html,
 body {
-  height: 100%;
+  height: 100dvh;
   padding: 0;
   margin: 0;
   display: flex;
@@ -233,6 +233,62 @@ li {
   overflow: visible !important;
 }
 
+.style1 {
+  font-size: var(--font-size-1);
+  line-height: var(--line-height-1);
+  letter-spacing: var(--letter-spacing-1);
+  font-weight: var(--font-weight-bold);
+}
+
+.style2 {
+  font-size: var(--font-size-2);
+  line-height: var(--line-height-2);
+  letter-spacing: var(--letter-spacing-2);
+  font-weight: var(--font-weight-bold);
+}
+
+.style3 {
+  font-size: var(--font-size-3);
+  line-height: var(--line-height-3);
+  letter-spacing: var(--letter-spacing-3);
+  font-weight: var(--font-weight-semi-bold);
+}
+
+.style4 {
+  font-size: var(--font-size-4);
+  line-height: var(--line-height-4);
+  letter-spacing: var(--letter-spacing-4);
+  font-weight: var(--font-weight-semi-bold);
+}
+
+.style-large {
+  font-size: var(--font-size-large);
+  line-height: var(--line-height-large);
+  letter-spacing: var(--letter-spacing-large);
+  font-weight: var(--font-weight-medium);
+}
+
+.style-normal {
+  font-size: var(--font-size-normal);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  font-weight: var(--font-weight-regular);
+}
+
+.style-small {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  letter-spacing: var(--letter-spacing-small);
+  font-weight: var(--font-weight-regular);
+}
+
+.style-label {
+  font-size: var(--font-size-label);
+  line-height: var(--line-height-label);
+  letter-spacing: var(--letter-spacing-label);
+  font-weight: var(--font-weight-medium);
+}
+
 .themeswitcher {
   position: relative;
 
@@ -298,19 +354,30 @@ li {
 }
 
 .name-title {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  justify-content: center;
+  align-items: center;
 
   h1 {
-    font-size: var(--font-size-1);
+    font-size: 100px;
   }
 
   h2 {
-    font-size: var(--font-size-2);
+    margin-top: 1.75em;
   }
 
   .cursor {
     animation: blink 1s infinite;
     opacity: 0;
+  }
+
+  p {
+    position: absolute;
+    bottom: 5em;
+    width: 70%;
+    text-wrap: balance;
   }
 }
 
