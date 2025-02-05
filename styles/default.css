@@ -10,14 +10,14 @@
   --background-primary-persian: #efe7da;
   --text-persian: #6e0509;
 
-  --font-size-1: 32px;
-  --font-size-2: 28px;
-  --font-size-3: 24px;
-  --font-size-4: 20px;
-  --font-size-large: 18px;
-  --font-size-normal: 16px;
-  --font-size-small: 14px;
-  --font-size-label: 14px;
+  --font-size-1: clamp(40px, 6.5vw, 52px);
+  --font-size-2: clamp(30px, 5vw, 40px);
+  --font-size-3: clamp(24px, 4vw, 28px);
+  --font-size-4: clamp(18px, 3vw, 22px);
+  --font-size-large: clamp(18px, 2.8vw, 22px);
+  --font-size-normal: clamp(16px, 2.5vw, 18px);
+  --font-size-small: clamp(14px, 2vw, 16px);
+  --font-size-label: clamp(14px, 2vw, 16px);
 
   --line-height-1: 40px;
   --line-height-2: 36px;
@@ -55,6 +55,11 @@
     .theme-menu {
       background: var(--text-light);
       color: var(--background-primary-light);
+
+      button.active {
+        color: var(--text-light);
+        background-color: var(--background-primary-light);
+      }
     }
   }
 }
@@ -71,6 +76,11 @@
     .theme-menu {
       background: var(--text-dark);
       color: var(--background-primary-dark);
+
+      button.active {
+        color: var(--text-dark);
+        background-color: var(--background-primary-dark);
+      }
     }
   }
 }
@@ -87,8 +97,18 @@
     .theme-menu {
       background: var(--text-persian);
       color: var(--background-primary-persian);
+
+      button.active {
+        color: var(--text-persian);
+        background-color: var(--background-primary-persian);
+      }
     }
   }
+}
+
+.theme-menu button[data-theme="automatic"].active {
+  color: light-dark(var(--text-light), var(--text-dark));
+  background-color: light-dark(var(--background-primary-light), var(--background-primary-dark));
 }
 
 /* arabic */
@@ -245,51 +265,31 @@ main {
   li {
     padding: 1em;
   }
+
+  button {
+    display: block;
+    width: 100%;
+    border: none;
+    background: none;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-family: "Gulzar", sans-serif;
+    color: inherit;
+    font-size: 14px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+  }
+
+  button:hover,
+  button:focus {
+    background-color: var(--theme-bg-hover);
+    color: var(--theme-text-hover);
+  }
 }
 
 .theme-menu.show {
   display: block;
-}
-
-.theme-menu button {
-  display: block;
-  width: 100%;
-  border: none;
-  background: none;
-  padding: 10px;
-  cursor: pointer;
-  text-align: center;
-  font-family: "Gulzar", sans-serif;
-  color: inherit;
-  font-size: 14px;
-  border-radius: 15px;
-  transition: all 0.3s ease;
-}
-
-.theme-menu button:hover,
-.theme-menu button:focus {
-  background-color: var(--theme-bg-hover);
-  color: var(--theme-text-hover);
-}
-
-.theme-menu button[data-theme="automatic"].active {
-  color: light-dark(var(--text-light), var(--text-dark));
-  background-color: light-dark(var(--background-primary-light), var(--background-primary-dark));
-}
-
-.theme-menu button[data-theme="light"].active {
-  color: var(--text-light);
-  background-color: var(--background-primary-light);
-}
-
-.theme-menu button[data-theme="dark"].active {
-  color: var(--text-dark);
-  background-color: var(--background-primary-dark);
-}
-
-.theme-menu button[data-theme="persian"].active {
-  color: var(--text-persian);
-  background-color: var(--background-primary-persian);
 }
 
 nav,
@@ -298,9 +298,15 @@ li {
 }
 
 .name-title {
-  text-align: center;
   width: 100%;
-  font-size: xx-large;
+
+  h1 {
+    font-size: var(--font-size-1);
+  }
+
+  h2 {
+    font-size: var(--font-size-2);
+  }
 
   .cursor {
     animation: blink 1s infinite;
