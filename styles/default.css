@@ -370,7 +370,8 @@ li {
   align-items: center;
 
   h1 {
-    font-size: 100px;
+    font-size: clamp(80vw, 100px, 100px);
+    white-space: nowrap;
   }
 
   h2 {
