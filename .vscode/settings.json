@@ -1,5 +1,7 @@
 {
   "editor.linkedEditing": true,
   "prettier.printWidth": 150,
-  "cSpell.words": ["فوخد"]
+  "cSpell.words": ["transform", "فوخد"],
+  "cSpell.ignoreWords": ["transform"],
+  "css.lint.unknownAtRules": "ignore"
 }
