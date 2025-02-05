@@ -370,11 +370,9 @@ li {
   align-items: center;
 
   h1 {
-    font-size: clamp(40px, 10dvw, 100px);
+    font-size: clamp(60px, 50dvw, 100px);
     max-width: 80dvw;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
   h2 {
