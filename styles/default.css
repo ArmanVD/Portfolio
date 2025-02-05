@@ -1,6 +1,8 @@
 :root {
   color-scheme: light dark;
 
+  --fadeInTime: 0s;
+
   --background-primary-light: #f0f0f0;
   --text-light: #1e1e1e;
 
@@ -385,6 +387,8 @@ li {
     bottom: 5em;
     width: 70%;
     text-wrap: balance;
+    animation: show 1000ms var(--fadeInTime) cubic-bezier(0.33, 1, 0.68, 1) forwards;
+    opacity: 0;
   }
 }
 
@@ -395,6 +399,12 @@ li {
   50% {
     opacity: 0;
   }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
   100% {
     opacity: 1;
   }

@@ -99,6 +99,12 @@ let isTypingStaticText = true;
 titleElement.textContent = "";
 
 const typeInterval = 100;
+
+document.documentElement.style.setProperty(
+  "--fadeInTime",
+  `${(text.split("").length + wordsH2[0].split("").length + staticText.split("").length) * typeInterval + 250}ms`
+);
+
 setTimeout(() => {
   typeEffect();
 }, typeInterval);
