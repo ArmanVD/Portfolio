@@ -370,10 +370,10 @@ li {
   align-items: center;
 
   h1 {
-    font-size: clamp(40px, 50dvw, 100px);
+    font-size: clamp(55px, 30dvw, 100px);
     max-width: 80dvw;
     white-space: nowrap;
-}
+  }
 
   h2 {
     margin-top: 1.75em;
