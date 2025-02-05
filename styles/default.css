@@ -106,11 +106,6 @@
   }
 }
 
-.theme-menu button[data-theme="automatic"].active {
-  color: light-dark(var(--text-light), var(--text-dark));
-  background-color: light-dark(var(--background-primary-light), var(--background-primary-dark));
-}
-
 /* arabic */
 @font-face {
   font-family: "Gulzar";
@@ -233,17 +228,22 @@ main {
   flex-direction: column;
 }
 
-.themeswitcher {
-  position: relative;
+nav,
+li {
+  overflow: visible !important;
 }
 
-#theme-toggle-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: none;
-  cursor: pointer;
+.themeswitcher {
+  position: relative;
+
+  #theme-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 }
 
 .theme-menu {
@@ -262,6 +262,10 @@ main {
   transition: all 0.3s ease;
   height: max-content;
 
+  &.show {
+    display: block;
+  }
+
   li {
     padding: 1em;
   }
@@ -279,22 +283,18 @@ main {
     font-size: 14px;
     border-radius: 15px;
     transition: all 0.3s ease;
+
+    &:hover,
+    &:focus {
+      background-color: var(--theme-bg-hover);
+      color: var(--theme-text-hover);
+    }
+
+    &.active {
+      color: light-dark(var(--text-light), var(--text-dark));
+      background-color: light-dark(var(--background-primary-light), var(--background-primary-dark));
+    }
   }
-
-  button:hover,
-  button:focus {
-    background-color: var(--theme-bg-hover);
-    color: var(--theme-text-hover);
-  }
-}
-
-.theme-menu.show {
-  display: block;
-}
-
-nav,
-li {
-  overflow: visible !important;
 }
 
 .name-title {
