@@ -169,13 +169,6 @@ body {
   flex-direction: column;
 }
 
-html {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: subpixel-antialiased;
-  -webkit-text-stroke: 1px transparent;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 body {
   background-color: light-dark(var(--background-primary-light), var(--background-primary-dark));
   color: light-dark(var(--text-light), var(--text-dark));
