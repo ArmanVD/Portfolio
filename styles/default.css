@@ -303,55 +303,55 @@ li {
     border: none;
     cursor: pointer;
   }
-}
 
-.theme-menu {
-  display: none;
-  position: absolute;
-  background: light-dark(var(--text-light), var(--text-dark));
-  color: light-dark(var(--background-primary-light), var(--background-primary-dark));
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
-  padding: 10px;
-  top: 110%;
-  right: 50%;
-  transform: translateX(50%);
-  z-index: 1000;
-  min-width: 180px;
-  transition: all 0.3s ease;
-  height: max-content;
-
-  &.show {
-    display: block;
-  }
-
-  li {
-    padding: 1em;
-  }
-
-  button {
-    display: block;
-    width: 100%;
-    border: none;
-    background: none;
-    padding: 10px;
-    cursor: pointer;
-    text-align: center;
-    font-family: "Gulzar", sans-serif;
-    color: inherit;
-    font-size: 14px;
+  .theme-menu {
+    display: none;
+    position: absolute;
+    background: light-dark(var(--text-light), var(--text-dark));
+    color: light-dark(var(--background-primary-light), var(--background-primary-dark));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
+    padding: 10px;
+    top: 110%;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 1000;
+    min-width: 180px;
     transition: all 0.3s ease;
+    height: max-content;
 
-    &:hover,
-    &:focus {
-      background-color: var(--theme-bg-hover);
-      color: var(--theme-text-hover);
+    &.show {
+      display: block;
     }
 
-    &.active {
-      color: light-dark(var(--text-light), var(--text-dark));
-      background-color: light-dark(var(--background-primary-light), var(--background-primary-dark));
+    li {
+      padding: 1em;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      border: none;
+      background: none;
+      padding: 10px;
+      cursor: pointer;
+      text-align: center;
+      font-family: "Gulzar", sans-serif;
+      color: inherit;
+      font-size: 14px;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+
+      &:hover,
+      &:focus {
+        background-color: var(--theme-bg-hover);
+        color: var(--theme-text-hover);
+      }
+
+      &.active {
+        color: light-dark(var(--text-light), var(--text-dark));
+        background-color: light-dark(var(--background-primary-light), var(--background-primary-dark));
+      }
     }
   }
 }
