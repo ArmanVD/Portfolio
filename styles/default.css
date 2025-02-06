@@ -371,7 +371,8 @@ li {
   align-items: center;
 
   h1 {
-    font-size: clamp(55px, 30dvw, 100px);
+    font-size: 85px;
+    line-height: 10vh;
   }
 
   h2 {
