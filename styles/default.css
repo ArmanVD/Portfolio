@@ -313,8 +313,6 @@ li {
     border-radius: 15px;
     padding: 10px;
     top: 110%;
-    right: 50%;
-    transform: translateX(50%);
     z-index: 1000;
     min-width: 180px;
     transition: all 0.3s ease;
@@ -402,5 +400,24 @@ li {
 @keyframes show {
   100% {
     opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .themeswitcher {
+    .theme-menu {
+      right: 125%;
+      min-width: 180px;
+      height: max-content;
+      transform: translateX(50%);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .themeswitcher {
+    .theme-menu {
+      right: 50%;
+    }
   }
 }
