@@ -195,7 +195,6 @@ header {
   }
 
   li {
-    position: relative;
     overflow: hidden;
   }
 
@@ -293,8 +292,6 @@ li {
 }
 
 .themeswitcher {
-  position: relative;
-
   #theme-toggle-btn {
     display: flex;
     align-items: center;
@@ -405,6 +402,8 @@ li {
 
 @media (min-width: 768px) {
   .themeswitcher {
+    position: relative;
+
     .theme-menu {
       right: 125%;
       min-width: 180px;
