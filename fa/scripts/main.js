@@ -135,7 +135,7 @@ const h2Element = document.getElementById("animated-h2");
 const textElementH2 = document.getElementById("animated-text-h2");
 const cursor = document.getElementById("cursor");
 
-const wordsH2 = ["فرانت اند توسعه دهنده", "توسعه‌دهنده هستم", "طراح هستم", "توسعه‌دهنده وب هستم", "طراح UI/UX هستم", "دانشجو هستم"];
+let wordsH2 = ["فرانت اند توسعه دهنده", "توسعه‌دهنده هستم", "طراح هستم", "توسعه‌دهنده وب هستم", "طراح UI/UX هستم", "دانشجو هستم"];
 
 const staticText = "من یک ";
 
@@ -148,6 +148,16 @@ let isTypingStaticText = true;
 titleElement.textContent = "";
 
 const typeInterval = 100;
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+shuffleArray(wordsH2);
+wordIndexH2 = Math.floor(Math.random() * wordsH2.length);
 
 document.documentElement.style.setProperty(
   "--fadeInTime",
