@@ -307,13 +307,14 @@ li {
     background: light-dark(var(--text-light), var(--text-dark));
     color: light-dark(var(--background-primary-light), var(--background-primary-dark));
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
     padding: 10px;
-    top: 110%;
+    border-radius: 0px 0px 15px 15px;
     z-index: 1000;
-    min-width: 180px;
+    width: 100dvw;
     transition: all 0.3s ease;
     height: max-content;
+    left: 0;
+    top: 0;
 
     &.show {
       display: block;
@@ -326,6 +327,7 @@ li {
     button {
       display: block;
       width: 100%;
+      height: 60px;
       border: none;
       background: none;
       padding: 10px;
@@ -347,6 +349,12 @@ li {
         color: light-dark(var(--text-light), var(--text-dark));
         background-color: light-dark(var(--background-primary-light), var(--background-primary-dark));
       }
+    }
+
+    .close-menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
@@ -408,7 +416,16 @@ li {
       right: 125%;
       min-width: 180px;
       height: max-content;
+      width: 180px;
       transform: translateX(50%);
+      top: 110%;
+      left: unset;
+      border-radius: 15px;
+
+      .close-menu,
+      .close-item {
+        display: none;
+      }
     }
   }
 }

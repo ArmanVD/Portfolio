@@ -1,6 +1,7 @@
 const themeToggleBtn = document.getElementById("theme-toggle-btn");
 const themeIcon = document.getElementById("theme-icon");
 const themeMenu = document.getElementById("theme-menu");
+const closeButton = document.querySelector(".close-menu");
 const themeButtons = document.querySelectorAll(".js-themepicker-themeselect");
 const root = document.documentElement;
 
@@ -13,8 +14,53 @@ const themeIcons = {
 const savedTheme = localStorage.getItem("theme") || "automatic";
 setTheme(savedTheme);
 
-themeToggleBtn.addEventListener("click", () => {
-  themeMenu.classList.toggle("show");
+let isAnimating = false;
+
+function openMenu() {
+  if (isAnimating || themeMenu.classList.contains("show")) return;
+  isAnimating = true;
+
+  themeMenu.style.display = "block";
+  themeMenu.style.opacity = "0";
+
+  requestAnimationFrame(() => {
+    themeMenu.style.transition = "opacity 0.3s ease";
+    themeMenu.style.opacity = "1";
+    themeMenu.classList.add("show");
+
+    setTimeout(() => {
+      isAnimating = false;
+    }, 300);
+  });
+}
+
+function closeMenu() {
+  if (isAnimating || !themeMenu.classList.contains("show")) return;
+  isAnimating = true;
+
+  themeMenu.style.transition = "opacity 0.3s ease";
+  themeMenu.style.opacity = "0";
+
+  setTimeout(() => {
+    themeMenu.style.display = "none";
+    themeMenu.classList.remove("show");
+    isAnimating = false;
+  }, 300);
+}
+
+themeToggleBtn.addEventListener("click", (event) => {
+  event.stopPropagation();
+  openMenu();
+});
+
+closeButton.addEventListener("click", () => {
+  closeMenu();
+});
+
+document.addEventListener("click", (event) => {
+  if (!themeMenu.contains(event.target) && !themeToggleBtn.contains(event.target)) {
+    closeMenu();
+  }
 });
 
 themeButtons.forEach((button) => {
@@ -42,7 +88,10 @@ function setTheme(theme) {
   }
 
   updateHoverColors(theme);
-  themeMenu.classList.remove("show");
+
+  setTimeout(() => {
+    closeMenu();
+  }, 500);
 }
 
 function getSystemTheme() {
