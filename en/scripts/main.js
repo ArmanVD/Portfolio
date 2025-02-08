@@ -203,7 +203,7 @@ function updateWordH2() {
 
     if (charIndexH2 === currentWord.length) {
       isDeletingH2 = true;
-      setTimeout(updateWordH2, 15000);
+      setTimeout(updateWordH2, 4000);
       return;
     }
   } else {

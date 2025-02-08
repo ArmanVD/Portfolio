@@ -389,6 +389,10 @@ li {
     opacity: 0;
   }
 
+  .style-small {
+    bottom: 3em;
+  }
+
   .arrow-down-home {
     position: absolute;
     bottom: 2em;
