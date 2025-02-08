@@ -388,6 +388,13 @@ li {
     animation: show 1000ms var(--fadeInTime) cubic-bezier(0.33, 1, 0.68, 1) forwards;
     opacity: 0;
   }
+
+  .arrow-down-home {
+    position: absolute;
+    bottom: 2em;
+    animation: show 1000ms var(--fadeInTime) cubic-bezier(0.33, 1, 0.68, 1) forwards, MoveUpDown 2s ease-in-out infinite;
+    opacity: 0;
+  }
 }
 
 @keyframes blink {
@@ -405,6 +412,16 @@ li {
 @keyframes show {
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    transform: translateY(2em);
+  }
+  50% {
+    transform: translateY(1em);
   }
 }
 
