@@ -45,64 +45,70 @@
   --font-weight-regular: 400;
 }
 
-[data-theme="light"] body {
-  background-color: var(--background-primary-light);
-  color: var(--text-light);
+[data-theme="light"] {
+  body {
+    background-color: var(--background-primary-light);
+    color: var(--text-light);
 
-  header {
-    a::after {
-      background-color: var(--text-light);
-    }
+    header {
+      a::after {
+        background-color: var(--text-light);
+      }
 
-    .theme-menu {
-      background: var(--text-light);
-      color: var(--background-primary-light);
+      .theme-menu {
+        background: var(--text-light);
+        color: var(--background-primary-light);
 
-      button.active {
-        color: var(--text-light);
-        background-color: var(--background-primary-light);
+        button.active {
+          color: var(--text-light);
+          background-color: var(--background-primary-light);
+        }
       }
     }
   }
 }
 
-[data-theme="dark"] body {
-  background-color: var(--background-primary-dark);
-  color: var(--text-dark);
+[data-theme="dark"] {
+  body {
+    background-color: var(--background-primary-dark);
+    color: var(--text-dark);
 
-  header {
-    a::after {
-      background-color: var(--text-dark);
-    }
+    header {
+      a::after {
+        background-color: var(--text-dark);
+      }
 
-    .theme-menu {
-      background: var(--text-dark);
-      color: var(--background-primary-dark);
+      .theme-menu {
+        background: var(--text-dark);
+        color: var(--background-primary-dark);
 
-      button.active {
-        color: var(--text-dark);
-        background-color: var(--background-primary-dark);
+        button.active {
+          color: var(--text-dark);
+          background-color: var(--background-primary-dark);
+        }
       }
     }
   }
 }
 
-[data-theme="persian"] body {
-  background-color: var(--background-primary-persian);
-  color: var(--text-persian);
+[data-theme="persian"] {
+  body {
+    background-color: var(--background-primary-persian);
+    color: var(--text-persian);
 
-  header {
-    a::after {
-      background-color: var(--text-persian);
-    }
+    header {
+      a::after {
+        background-color: var(--text-persian);
+      }
 
-    .theme-menu {
-      background: var(--text-persian);
-      color: var(--background-primary-persian);
+      .theme-menu {
+        background: var(--text-persian);
+        color: var(--background-primary-persian);
 
-      button.active {
-        color: var(--text-persian);
-        background-color: var(--background-primary-persian);
+        button.active {
+          color: var(--text-persian);
+          background-color: var(--background-primary-persian);
+        }
       }
     }
   }
@@ -162,11 +168,13 @@ h6 {
 
 html,
 body {
-  height: 100dvh;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100dvw;
 }
 
 body {
@@ -177,8 +185,13 @@ body {
 }
 
 header {
-  height: 10vh;
+  height: 10dvh;
+  width: 100dvw;
   z-index: 10;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
   nav {
     height: 100%;
@@ -222,17 +235,25 @@ header {
 }
 
 main {
-  flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   flex-direction: column;
+  text-wrap: balance;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
 nav,
 li {
   overflow: visible !important;
+}
+
+article {
+  height: 100dvh;
+  width: 100dvw;
+  scroll-snap-align: start;
 }
 
 .style1 {
@@ -362,7 +383,7 @@ li {
 .name-title {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  height: 90dvh;
   justify-content: center;
   align-items: center;
 
@@ -384,7 +405,6 @@ li {
     position: absolute;
     bottom: 5em;
     width: 70%;
-    text-wrap: balance;
     animation: show 1000ms var(--fadeInTime) cubic-bezier(0.33, 1, 0.68, 1) forwards;
     opacity: 0;
   }
@@ -398,6 +418,29 @@ li {
     bottom: 2em;
     animation: show 1000ms var(--fadeInTime) cubic-bezier(0.33, 1, 0.68, 1) forwards, MoveUpDown 2s ease-in-out infinite;
     opacity: 0;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
+.about,
+.study,
+.projects,
+.photography,
+.contact {
+  padding-top: 12dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    margin-bottom: 1em;
+  }
+  p {
+    width: 70%;
   }
 }
 

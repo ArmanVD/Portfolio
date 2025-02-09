@@ -218,3 +218,44 @@ function updateWordH2() {
 
   setTimeout(updateWordH2, typeInterval);
 }
+
+const articles = document.querySelectorAll("article");
+let isScrolling = false;
+
+function snapToSection() {
+  if (isScrolling) return;
+  isScrolling = true;
+
+  const scrollPosition = window.scrollY;
+  let closestArticle = null;
+  let closestDistance = Infinity;
+
+  if (scrollPosition < articles[1].offsetTop / 2) {
+    isScrolling = false;
+    return;
+  }
+
+  for (let i = 1; i < articles.length; i++) {
+    let distance = Math.abs(articles[i].offsetTop - scrollPosition);
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closestArticle = articles[i];
+    }
+  }
+
+  if (closestArticle) {
+    window.scrollTo({
+      top: closestArticle.offsetTop,
+      behavior: "smooth",
+    });
+  }
+
+  setTimeout(() => {
+    isScrolling = false;
+  }, 600);
+}
+
+window.addEventListener("scroll", () => {
+  clearTimeout(window.snapScrollTimeout);
+  window.snapScrollTimeout = setTimeout(snapToSection, 150);
+});
