@@ -445,6 +445,15 @@ article {
   }
 }
 
+.about {
+  .about-image {
+    max-height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
 @keyframes blink {
   0% {
     opacity: 1;
