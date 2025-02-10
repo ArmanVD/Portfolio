@@ -175,6 +175,7 @@ body {
 html {
   scroll-behavior: smooth;
   width: 100dvw;
+  overflow-x: hidden;
 }
 
 body {
