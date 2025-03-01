@@ -242,8 +242,6 @@ main {
   text-align: center;
   flex-direction: column;
   text-wrap: balance;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
 }
 
 nav,
